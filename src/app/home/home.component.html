@@ -9,7 +9,7 @@
    Logout
   </button>
 
-  <div class="datatable doctor-table">
+  <div class="datatable user-table">
     <ngx-datatable
       #table
       class="material expandable"
@@ -49,7 +49,7 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column name="Delete" [width]="160" [sortable]="false" [resizeable]="false">
+      <ngx-datatable-column name="Delete" [width]="160" [sortable]="false" [resizeable]="false" *ngIf="user[0]['isAdmin']">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
           <button class="delete" mat-icon-button><em class="material-icons" (click)="confirmDelete(row._id, rowIndex)">
             delete

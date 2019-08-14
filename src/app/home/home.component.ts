@@ -11,6 +11,7 @@ import {DialogsService} from "../dialog-service/dialogs.service";
 })
 export class HomeComponent implements OnInit {
   rows = [];
+  user: any = {};
   constructor( public loginService: LoginService,
                private router: Router,
                public toastr: ToastrService ,
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('userData'));
     this.users();
   }
 
