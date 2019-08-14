@@ -1,0 +1,64 @@
+<div class="user">
+  <div class="header-data">
+    <button mat-button class="addPost" (click)="editProfile()">
+      Edit Profile
+    </button>
+  </div>
+
+  <button mat-button class="addPost" (click)="logout()">
+   Logout
+  </button>
+
+  <div class="datatable doctor-table">
+    <ngx-datatable
+      #table
+      class="material expandable"
+      [rows]='rows'
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [limit]='limit'
+      [rowHeight]="50"
+      [scrollbarH]="true"
+    >
+      <ngx-datatable-column name="#" prop="id" [resizeable]="false" [width]="20">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <span>{{rowIndex  + 1 }}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="First name" [width]="100" prop="firstName" [resizeable]="false"
+      >
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <span>{{value | titlecase}}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column prop="lastName" [width]="100" name="lastName" [resizeable]="false"
+      >
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <span>{{value | titlecase}}</span>
+        </ng-template>
+      </ngx-datatable-column>
+
+
+      <ngx-datatable-column name="Email" prop="email" [resizeable]="false"
+      >
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <span>{{value}} </span>
+        </ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column name="Delete" [width]="160" [sortable]="false" [resizeable]="false">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <button class="delete" mat-icon-button><em class="material-icons" (click)="confirmDelete(row._id, rowIndex)">
+            delete
+          </em>
+          </button>
+        </ng-template>
+      </ngx-datatable-column>
+
+    </ngx-datatable>
+  </div>
+</div>
+

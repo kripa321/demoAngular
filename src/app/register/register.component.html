@@ -1,0 +1,52 @@
+<h1 style="text-align:center">
+  Register Page
+</h1>
+<div class="login">
+  <h2 class="login-header">Sign up</h2>
+  <form [formGroup]="registerForm" class="login-container" (ngSubmit)="register()">
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
+      <input type="text" placeholder="First Name" formControlName="firstName">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.firstName.errors" class="help-block">
+      <div *ngIf="formControls.firstName.errors.required">First name is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+      <input type="text" placeholder="Last Name" formControlName="lastName">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.lastName.errors" class="help-block">
+      <div *ngIf="formControls.lastName.errors.required">Last name is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+      <input type="email" placeholder="Email" formControlName="email">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+      <div *ngIf="formControls.email.errors.required">Email is required</div>
+    </div>
+
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+      <input type="password" placeholder="Password" formControlName="password">
+    </p>
+
+    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+      <div *ngIf="formControls.password.errors.required">Password is required</div>
+    </div>
+
+    <div class="admin">
+    <mat-checkbox class="example-margin" formControlName="isAdmin">
+      <label>IsAdmin</label>
+    </mat-checkbox>
+      <p *ngIf="formControls.isAdmin.value">you have to remove this filed manually after admin signup</p>
+    </div>
+    <p>
+      <input type="submit" value="Submit">
+      <span  (click)="loginPage()">login</span>
+    </p>
+
+  </form>
+</div>

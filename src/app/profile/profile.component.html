@@ -1,0 +1,28 @@
+<div class="add-user-header">
+  <h2>Edit</h2>
+
+</div>
+<div class="add-user-content">
+  <form  [formGroup]="userForm" (ngSubmit)="postSubmit()">
+
+    <mat-form-field>
+      <input matInput placeholder=" First name"  type="text"  formControlName="firstName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder=" Last name"   type="text" formControlName="lastName">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Email"   type="email" formControlName="email">
+    </mat-form-field>
+
+
+
+    <div class="button-content">
+      <button mat-raised-button class="save-button" #btnClose mat-raised-button class="save-button" data-dismiss="modal" aria-label="Close" >Save
+      </button>
+      <button mat-button class="close-button" [mat-dialog-close]="">Cancel</button>
+    </div>
+  </form>
+</div>

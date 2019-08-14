@@ -1,0 +1,46 @@
+/deep/.mat-dialog-container {
+  margin: auto;
+  padding: 0;
+  .add-user-header {
+    background-color: rgba(0,52,104,1);
+    margin: 0;
+    float: left;
+    width: 100%;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    h2 {
+      color: #ffffff;
+      margin: inherit;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+  }
+  .add-user-content{
+    margin: 5px;
+    /deep/ .mat-form-field {
+      display: block;
+      /deep/ .mat-form-field-infix input {
+        padding: 0 !important;
+        height: 100%;
+      }
+    }
+  }
+
+  .button-content{
+    padding: 25px;
+    margin-bottom: 20px;
+    button {
+      float: right;
+    }
+    .save-button{
+      background-color: rgba(0,52,104,1);
+      color:white;
+    }
+    .close-button{
+      background-color: gray;
+      margin-right: 25px;
+      color:white;
+    }
+  }
+}
